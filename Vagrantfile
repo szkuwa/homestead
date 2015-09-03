@@ -8,6 +8,7 @@ homesteadYamlPath = confDir + "/Homestead.yaml"
 homesteadJsonPath = confDir + "/Homestead.json"
 afterScriptPath = confDir + "/after.sh"
 aliasesPath = confDir + "/aliases"
+alwaysScriptPath = confDir + "/always.sh"
 
 require File.expand_path(File.dirname(__FILE__) + '/scripts/homestead.rb')
 
@@ -24,5 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     if File.exists? afterScriptPath then
         config.vm.provision "shell", path: afterScriptPath
+    end
+
+    if File.exists? alwaysScriptPath then
+        config.vm.provision "UP", type: "shell", run: "always", path: alwaysScriptPath
     end
 end

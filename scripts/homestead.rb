@@ -14,7 +14,7 @@ class Homestead
     config.vm.hostname = settings["hostname"] ||= "homestead"
 
     # Configure A Private Network IP
-    config.vm.network :private_network, ip: settings["ip"] ||= "192.168.10.10"
+    config.vm.network :public_network, ip: settings["ip"] ||= "192.168.10.10"
 
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
@@ -155,9 +155,10 @@ class Homestead
         end
       end
 
-      config.vm.provision "shell" do |s|
-        s.inline = "service php5-fpm restart"
-      end
+      # not needed anymore since we're using phpbrew fpm
+      # config.vm.provision "shell" do |s|
+      #  s.inline = "service php5-fpm restart"
+      # end
     end
 
     # Update Composer On Every Provision

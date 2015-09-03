@@ -10,12 +10,12 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Code
-      to: /home/vagrant/Code
+    - map: ~/sites
+      to: /home/vagrant/sites
 
 sites:
-    - map: homestead.app
-      to: /home/vagrant/Code/Laravel/public
+    - map: eopti.local
+      to: /home/vagrant/sites/oangle/public
 
 databases:
     - homestead

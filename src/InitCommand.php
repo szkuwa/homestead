@@ -37,6 +37,7 @@ class InitCommand extends Command
         copy(__DIR__.'/stubs/Homestead.yaml', homestead_path().'/Homestead.yaml');
         copy(__DIR__.'/stubs/after.sh', homestead_path().'/after.sh');
         copy(__DIR__.'/stubs/aliases', homestead_path().'/aliases');
+        copy(__DIR__.'/stubs/always.sh', homestead_path().'/always.sh');
 
         $output->writeln('<comment>Creating Homestead.yaml file...</comment> <info>✔</info>');
         $output->writeln('<comment>Homestead.yaml file created at:</comment> '.homestead_path().'/Homestead.yaml');
