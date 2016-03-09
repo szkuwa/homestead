@@ -21,7 +21,10 @@ libmcrypt-dev \
 libpng12-dev \
 libssl-dev \
 libxslt1-dev \
-bison
+bison \
+libicu52 \
+libicu-dev \
+libgd2-xpm-dev
 
 echo "===> Disable system php5-fpm"
 service php5-fpm stop
@@ -44,7 +47,7 @@ source /home/vagrant/.phpbrew/bashrc
 
 # download and install master branch
 echo "===> Download and install latest php master branch"
-phpbrew install next as php-7 +default +fpm +mcrypt +openssl +gd +mysql +pdo +sqlite
+phpbrew install next as php-7 +default +fpm +mcrypt +openssl +gd +mysql +pdo +sqlite +intl
 
 # switch to php7
 echo "===> Switch to use php7"
